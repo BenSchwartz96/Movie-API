@@ -74,7 +74,6 @@ app.get('/', (req, res) => {
 
 /**
  * GET request to get data on all movies
- * Request body: Bearer token
  * @name getAllMovies
  * @kind function
  * @returns JSON object holding data of all movies
@@ -95,7 +94,6 @@ app.get("/movies", passport.authenticate('jwt', { session: false }),
 
 /**
  * GET request to get data on a specific movie
- * Request body: Bearer token
  * @name getMovie
  * @kind function
  * @param {string} title
@@ -121,7 +119,6 @@ app.get('/movies/:title', passport.authenticate('jwt', { session: false }),
 
 /**
  * GET request to get data on a specific director
- * Request body: Bearer token
  * @name getDirector
  * @kind function
  * @param {string} director
@@ -147,7 +144,6 @@ app.get('/movies/directors/:director', passport.authenticate('jwt', { session: f
 
 /**
  * GET request to get data on a specific director
- * Request body: Bearer token
  * @name getGenre
  * @kind function
  * @param {string} genre
@@ -173,7 +169,7 @@ app.get('/movies/genres/:genre', passport.authenticate('jwt', { session: false }
 
 /**
  * POST request to create a new user and post their info to database
- * Request body: Object holding data about new user, consisting of Username, hashed Password, Email, and Birthday 
+ * Request body: Object holding data about new user, consisting of Username, Password, Email, and Birthday 
  * @name userRegistration
  * @kind function
  * @returns JSON object holding data of user
@@ -221,7 +217,7 @@ app.post('/users',
 
 /**
  * PUT request to update the information of a user
- * Request body: Bearer token + Object holding updated user information
+ * Request body: Object holding updated user information (consisting of Username, Password, Email, and Birthday)
  * @name updateUser
  * @kind function
  * @param {string} username
@@ -267,7 +263,6 @@ app.put('/users/:username', passport.authenticate('jwt', { session: false }),
 
 /**
  * GET request to find all users
- * Request body: Bearer token
  * @name getAllUsers
  * @kind function
  * @returns JSON object holding data on all users
@@ -288,7 +283,6 @@ app.get('/users', passport.authenticate('jwt', { session: false }),
 
 /**
  * GET request to find data on a specific user
- * Request body: Bearer token
  * @name getUser
  * @kind function
  * @param {string} Username
@@ -310,7 +304,6 @@ app.get('/users/:Username', passport.authenticate('jwt', { session: false }),
 
 /**
  * POST request to add a specific movie to users list of favorite movies
- * Request body: Bearer token
  * @name addFaveMovie
  * @kind function
  * @param {string} username
@@ -337,7 +330,6 @@ app.post('/users/:username/movies/:movieID', passport.authenticate('jwt', { sess
 
 /**
  * DELETE request to remove a specific movie from users list of favorite movies
- * Request body: Bearer token
  * @name removeFaveMovie
  * @kind function
  * @param {string} username
@@ -364,7 +356,6 @@ app.delete('/users/:username/movies/:movieID', passport.authenticate('jwt', { se
 
 /**
  * DELETE request to delete a specific user
- * Request body: Bearer token
  * @name deleteUser
  * @kind function
  * @param {string} Username
