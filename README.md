@@ -23,9 +23,17 @@
 - Express
 - MongoDB
 - Mongoose
+- JSdoc
 
 
+## Documentation
+
+[Link to documentation.html](https://elt-myflix.herokuapp.com/documentation.html)
 
 
+## Run it Yourself
 
-
+- Clone project & navigate to it in folder
+- Run `npm install`
+- Run `node index.js`
+- Reminder to adjust allowed origins & database connection for your own needs, if desired.  
