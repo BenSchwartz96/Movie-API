@@ -23,9 +23,9 @@ let generateJWTToken = (user) => {
 
 /**
  * POST request to log in a user, generating a JWT token upon login
+ * Request Body: Username & Password
  * @name postLogin
  * @kind function
- * @param router
  * @returns User object with JWT
  * @requires passport
  */
