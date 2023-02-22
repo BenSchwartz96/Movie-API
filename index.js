@@ -74,6 +74,7 @@ app.get('/', (req, res) => {
 
 /**
  * GET request to get data on all movies
+ * Request Body: This endpoint requires a Bearer Token sent in the Authorization Header
  * @name getAllMovies
  * @kind function
  * @returns JSON object holding data of all movies
@@ -94,6 +95,7 @@ app.get("/movies", passport.authenticate('jwt', { session: false }),
 
 /**
  * GET request to get data on a specific movie
+ * Request Body: This endpoint requires a Bearer Token sent in the Authorization Header
  * @name getMovie
  * @kind function
  * @param {string} title
@@ -119,6 +121,7 @@ app.get('/movies/:title', passport.authenticate('jwt', { session: false }),
 
 /**
  * GET request to get data on a specific director
+ * Request Body: This endpoint requires a Bearer Token sent in the Authorization Header
  * @name getDirector
  * @kind function
  * @param {string} director
@@ -144,6 +147,7 @@ app.get('/movies/directors/:director', passport.authenticate('jwt', { session: f
 
 /**
  * GET request to get data on a specific director
+ * Request Body: This endpoint requires a Bearer Token sent in the Authorization Header
  * @name getGenre
  * @kind function
  * @param {string} genre
@@ -217,7 +221,7 @@ app.post('/users',
 
 /**
  * PUT request to update the information of a user
- * Request body: Object holding updated user information (consisting of Username, Password, Email, and Birthday)
+ * Request body: Object holding updated user information (consisting of Username, Password, Email, and Birthday). This endpoint requires a Bearer Token sent in the Authorization Header
  * @name updateUser
  * @kind function
  * @param {string} username
@@ -263,6 +267,7 @@ app.put('/users/:username', passport.authenticate('jwt', { session: false }),
 
 /**
  * GET request to find all users
+ * Request Body: This endpoint requires a Bearer Token sent in the Authorization Header
  * @name getAllUsers
  * @kind function
  * @returns JSON object holding data on all users
@@ -283,6 +288,7 @@ app.get('/users', passport.authenticate('jwt', { session: false }),
 
 /**
  * GET request to find data on a specific user
+ * Request Body: This endpoint requires a Bearer Token sent in the Authorization Header
  * @name getUser
  * @kind function
  * @param {string} Username
@@ -304,6 +310,7 @@ app.get('/users/:Username', passport.authenticate('jwt', { session: false }),
 
 /**
  * POST request to add a specific movie to users list of favorite movies
+ * Request Body: This endpoint requires a Bearer Token sent in the Authorization Header
  * @name addFaveMovie
  * @kind function
  * @param {string} username
@@ -330,6 +337,7 @@ app.post('/users/:username/movies/:movieID', passport.authenticate('jwt', { sess
 
 /**
  * DELETE request to remove a specific movie from users list of favorite movies
+ * Request Body: This endpoint requires a Bearer Token sent in the Authorization Header
  * @name removeFaveMovie
  * @kind function
  * @param {string} username
@@ -356,6 +364,7 @@ app.delete('/users/:username/movies/:movieID', passport.authenticate('jwt', { se
 
 /**
  * DELETE request to delete a specific user
+ * Request Body: This endpoint requires a Bearer Token sent in the Authorization Header
  * @name deleteUser
  * @kind function
  * @param {string} Username

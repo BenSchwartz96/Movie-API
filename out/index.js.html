@@ -102,6 +102,7 @@ app.get('/', (req, res) => {
 
 /**
  * GET request to get data on all movies
+ * Request Body: This endpoint requires a Bearer Token sent in the Authorization Header
  * @name getAllMovies
  * @kind function
  * @returns JSON object holding data of all movies
@@ -122,6 +123,7 @@ app.get("/movies", passport.authenticate('jwt', { session: false }),
 
 /**
  * GET request to get data on a specific movie
+ * Request Body: This endpoint requires a Bearer Token sent in the Authorization Header
  * @name getMovie
  * @kind function
  * @param {string} title
@@ -147,6 +149,7 @@ app.get('/movies/:title', passport.authenticate('jwt', { session: false }),
 
 /**
  * GET request to get data on a specific director
+ * Request Body: This endpoint requires a Bearer Token sent in the Authorization Header
  * @name getDirector
  * @kind function
  * @param {string} director
@@ -172,6 +175,7 @@ app.get('/movies/directors/:director', passport.authenticate('jwt', { session: f
 
 /**
  * GET request to get data on a specific director
+ * Request Body: This endpoint requires a Bearer Token sent in the Authorization Header
  * @name getGenre
  * @kind function
  * @param {string} genre
@@ -245,7 +249,7 @@ app.post('/users',
 
 /**
  * PUT request to update the information of a user
- * Request body: Object holding updated user information (consisting of Username, Password, Email, and Birthday)
+ * Request body: Object holding updated user information (consisting of Username, Password, Email, and Birthday). This endpoint requires a Bearer Token sent in the Authorization Header
  * @name updateUser
  * @kind function
  * @param {string} username
@@ -291,6 +295,7 @@ app.put('/users/:username', passport.authenticate('jwt', { session: false }),
 
 /**
  * GET request to find all users
+ * Request Body: This endpoint requires a Bearer Token sent in the Authorization Header
  * @name getAllUsers
  * @kind function
  * @returns JSON object holding data on all users
@@ -311,6 +316,7 @@ app.get('/users', passport.authenticate('jwt', { session: false }),
 
 /**
  * GET request to find data on a specific user
+ * Request Body: This endpoint requires a Bearer Token sent in the Authorization Header
  * @name getUser
  * @kind function
  * @param {string} Username
@@ -332,6 +338,7 @@ app.get('/users/:Username', passport.authenticate('jwt', { session: false }),
 
 /**
  * POST request to add a specific movie to users list of favorite movies
+ * Request Body: This endpoint requires a Bearer Token sent in the Authorization Header
  * @name addFaveMovie
  * @kind function
  * @param {string} username
@@ -358,6 +365,7 @@ app.post('/users/:username/movies/:movieID', passport.authenticate('jwt', { sess
 
 /**
  * DELETE request to remove a specific movie from users list of favorite movies
+ * Request Body: This endpoint requires a Bearer Token sent in the Authorization Header
  * @name removeFaveMovie
  * @kind function
  * @param {string} username
@@ -384,6 +392,7 @@ app.delete('/users/:username/movies/:movieID', passport.authenticate('jwt', { se
 
 /**
  * DELETE request to delete a specific user
+ * Request Body: This endpoint requires a Bearer Token sent in the Authorization Header
  * @name deleteUser
  * @kind function
  * @param {string} Username
@@ -438,13 +447,13 @@ app.listen(port, '0.0.0.0', () => {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addFaveMovie">addFaveMovie</a></li><li><a href="global.html#allowedOrigins">allowedOrigins</a></li><li><a href="global.html#cors">cors</a></li><li><a href="global.html#deleteUser">deleteUser</a></li><li><a href="global.html#errorHandler">errorHandler</a></li><li><a href="global.html#getAllMovies">getAllMovies</a></li><li><a href="global.html#getAllUsers">getAllUsers</a></li><li><a href="global.html#getDirector">getDirector</a></li><li><a href="global.html#getGenre">getGenre</a></li><li><a href="global.html#getMovie">getMovie</a></li><li><a href="global.html#getUser">getUser</a></li><li><a href="global.html#port">port</a></li><li><a href="global.html#removeFaveMovie">removeFaveMovie</a></li><li><a href="global.html#updateUser">updateUser</a></li><li><a href="global.html#userRegistration">userRegistration</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addFaveMovie">addFaveMovie</a></li><li><a href="global.html#allowedOrigins">allowedOrigins</a></li><li><a href="global.html#cors">cors</a></li><li><a href="global.html#deleteUser">deleteUser</a></li><li><a href="global.html#errorHandler">errorHandler</a></li><li><a href="global.html#generateJWTToken">generateJWTToken</a></li><li><a href="global.html#getAllMovies">getAllMovies</a></li><li><a href="global.html#getAllUsers">getAllUsers</a></li><li><a href="global.html#getDirector">getDirector</a></li><li><a href="global.html#getGenre">getGenre</a></li><li><a href="global.html#getMovie">getMovie</a></li><li><a href="global.html#getUser">getUser</a></li><li><a href="global.html#port">port</a></li><li><a href="global.html#postLogin">postLogin</a></li><li><a href="global.html#removeFaveMovie">removeFaveMovie</a></li><li><a href="global.html#updateUser">updateUser</a></li><li><a href="global.html#userRegistration">userRegistration</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.1</a> on Tue Feb 21 2023 21:46:02 GMT+0100 (Central European Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.1</a> on Wed Feb 22 2023 17:43:37 GMT+0100 (Central European Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
